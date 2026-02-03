@@ -1,0 +1,25 @@
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Ignore node_modules if any
+node_modules/
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# Ignore log files
+*.log
+
+# Ignore cache files
+.cache/
+__pycache__/
+
+# Ignore built files (if any)
+/dist/
+/build/

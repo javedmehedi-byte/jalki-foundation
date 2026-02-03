@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View photos and videos of JALKI Foundation's activities, events, and community programs.">
+    <meta name="keywords" content="JALKI Foundation gallery, photos, videos, events, activities, community programs">
+    
+    <title>Gallery - JALKI FOUNDATION</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Gallery specific styles */
+        .gallery-item {
+            height: 250px;
+            background: var(--light-gray);
+        }
+        
+        .gallery-item.large {
+            height: 520px;
+        }
+        
+        .gallery-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .gallery-placeholder span {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .video-section {
+            margin-top: 4rem;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .video-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .video-thumbnail {
+            height: 200px;
+            background: var(--dark-gray);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .video-play-btn {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform var(--transition-fast);
+        }
+        
+        .video-play-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .video-info {
+            padding: 1.5rem;
+        }
+        
+        .video-info h4 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .video-info p {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-item.large {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <!-- Top Bar -->
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-left">
+                    <a href="mailto:jalkifoundation@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                        jalkifoundation@gmail.com
+                    </a>
+                    <a href="tel:+917005176498">
+                        <i class="fas fa-phone"></i>
+                        +91 7005176498
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Navigation -->
+        <div class="header-main">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">JF</div>
+                    <div class="logo-text">JALKI <span>FOUNDATION</span></div>
+                </a>
+                
+                <nav class="nav-menu" role="navigation" aria-label="Main navigation">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="programs.html" class="nav-link">Programs</a>
+                    <a href="gallery.html" class="nav-link active">Gallery</a>
+                    <a href="get-involved.html" class="nav-link">Get Involved</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="get-involved.html#donate" class="btn btn-donate nav-cta">Donate Now</a>
+                </nav>
+                
+                <div class="mobile-menu-toggle" aria-label="Toggle menu" role="button" tabindex="0">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>Gallery</h1>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>Gallery</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gallery Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-subtitle">Our Moments</p>
+                    <h2 class="section-title">Photo Gallery</h2>
+                    <p class="section-description">
+                        Explore moments from our programs, events, and community activities. 
+                        Each image tells a story of hope, transformation, and community spirit.
+                    </p>
+                </div>
+                
+                <!-- Gallery Filters -->
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+                    <button class="filter-btn" data-filter="education">Education</button>
+                    <button class="filter-btn" data-filter="environment">Environment</button>
+                    <button class="filter-btn" data-filter="women">Women & Child</button>
+                    <button class="filter-btn" data-filter="events">Events</button>
+                </div>
+                
+                <!-- Gallery Grid -->
+                <div class="gallery-grid">
+                    <!-- Healthcare Images -->
+                    <div class="gallery-item large" data-category="healthcare">
+                        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #4CAF50, #2E7D32);">
+                            <i class="fas fa-heartbeat"></i>
+                            <span>Health Camp 2025</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>View Image</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="healthcare">
+                        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #66BB6A, #43A047);">
+                            <i class="fas fa-stethoscope"></i>
+                            <span>Medical Checkup</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>View Image</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="healthcare">
+                        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #81C784, #66BB6A);">
+                            <i class="fas fa-pills"></i>
+                            <span>Medicine Distribution</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>View Image</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Education Images -->
+                    <div class="gallery-item" data-category="education">
+                        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #1565C0, #0D47A1);">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Skill Training</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>View Image</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item large" data-category="education">
+                        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #1976D2, #1565C0);">
+                            <i class="fas fa-laptop"></i>
+                            <span>Computer Training</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>View Image</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="education">
+                        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #42A5F5, #1E88E5);">
+                            <i class="fas fa-cut"></i>
+                            <span>Tailoring Class</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>View Image</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Environment Images -->
+                    <div class="gallery-item" data-category="environment">
+                        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #00BCD4, #0097A7);">
+                            <i class="fas fa-tree"></i>
+                            <span>Tree Plantation</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>View Image</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="environment">
+                        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #26C6DA, #00BCD4);">
+                            <i class="fas fa-recycle"></i>
+                            <span>Clean-up Drive</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>View Image</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item large" data-category="environment">
+                        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #4DD0E1, #26C6DA);">
+                            <i class="fas fa-leaf"></i>
+                            <span>Green Initiative</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>View Image</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Women & Child Images -->
+                    <div class="gallery-item" data-category="women">
+                        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #E91E63, #C2185B);">
+                            <i class="fas fa-female"></i>
+                            <span>Women Empowerment</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>View Image</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="women">
+                        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #EC407A, #E91E63);">
+                            <i class="fas fa-users"></i>
+                            <span>Self Help Group</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>View Image</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="women">
+                        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #F06292, #EC407A);">
+                            <i class="fas fa-child"></i>
+                            <span>Child Welfare</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>View Image</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Events Images -->
+                    <div class="gallery-item large" data-category="events">
+                        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #FF9800, #F57C00);">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Annual Event 2025</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>View Image</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="events">
+                        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #FFA726, #FF9800);">
+                            <i class="fas fa-award"></i>
+                            <span>Award Ceremony</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>View Image</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="events">
+                        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #FFB74D, #FFA726);">
+                            <i class="fas fa-handshake"></i>
+                            <span>Community Meeting</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>View Image</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="events">
+                        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #9C27B0, #7B1FA2);">
+                            <i class="fas fa-bullhorn"></i>
+                            <span>Awareness Campaign</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>View Image</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video Section -->
+                <div class="video-section">
+                    <div class="section-header">
+                        <p class="section-subtitle">Watch Our Impact</p>
+                        <h2 class="section-title">Video Gallery</h2>
+                        <p class="section-description">
+                            Watch videos showcasing our programs, success stories, and the impact 
+                            we're creating in communities.
+                        </p>
+                    </div>
+                    
+                    <div class="video-grid">
+                        <div class="video-card fade-in">
+                            <div class="video-thumbnail" style="background: linear-gradient(135deg, #4CAF50, #2E7D32);">
+                                <div class="video-play-btn">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h4>Health Camp Documentary</h4>
+                                <p>A glimpse into our free health camp serving remote villages</p>
+                            </div>
+                        </div>
+                        
+                        <div class="video-card fade-in">
+                            <div class="video-thumbnail" style="background: linear-gradient(135deg, #1565C0, #0D47A1);">
+                                <div class="video-play-btn">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h4>Skill Development Success Stories</h4>
+                                <p>Hear from women who transformed their lives through our training</p>
+                            </div>
+                        </div>
+                        
+                        <div class="video-card fade-in">
+                            <div class="video-thumbnail" style="background: linear-gradient(135deg, #00BCD4, #0097A7);">
+                                <div class="video-play-btn">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h4>Environmental Initiative</h4>
+                                <p>Our journey of planting 10,000 trees across Manipur</p>
+                            </div>
+                        </div>
+                        
+                        <div class="video-card fade-in">
+                            <div class="video-thumbnail" style="background: linear-gradient(135deg, #E91E63, #C2185B);">
+                                <div class="video-play-btn">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h4>Women Empowerment Program</h4>
+                                <p>Stories of strength and resilience from our beneficiaries</p>
+                            </div>
+                        </div>
+                        
+                        <div class="video-card fade-in">
+                            <div class="video-thumbnail" style="background: linear-gradient(135deg, #FF9800, #F57C00);">
+                                <div class="video-play-btn">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h4>Annual Report 2025</h4>
+                                <p>A comprehensive overview of our achievements and impact</p>
+                            </div>
+                        </div>
+                        
+                        <div class="video-card fade-in">
+                            <div class="video-thumbnail" style="background: linear-gradient(135deg, #9C27B0, #7B1FA2);">
+                                <div class="video-play-btn">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h4>Community Voices</h4>
+                                <p>Testimonials from community members and volunteers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Call to Action -->
+        <section class="cta">
+            <div class="container">
+                <h2>Be Part of Our Story</h2>
+                <p>
+                    Join us in creating more moments of hope and transformation. 
+                    Your support helps us reach more communities and change more lives.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="get-involved.html#volunteer" class="btn btn-secondary" style="background: white; color: var(--primary-green);">
+                        <i class="fas fa-hand-paper"></i>
+                        Volunteer With Us
+                    </a>
+                    <a href="get-involved.html#donate" class="btn btn-donate">
+                        <i class="fas fa-heart"></i>
+                        Donate Now
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <span class="lightbox-close"><i class="fas fa-times"></i></span>
+        <span class="lightbox-nav lightbox-prev"><i class="fas fa-chevron-left"></i></span>
+        <span class="lightbox-nav lightbox-next"><i class="fas fa-chevron-right"></i></span>
+        <div class="lightbox-content">
+            <img src="" alt="Gallery Image">
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">JF</div>
+                        <div class="logo-text">JALKI <span>FOUNDATION</span></div>
+                    </a>
+                    <p>
+                        JALKI Foundation is a non-profit organization dedicated to empowering 
+                        communities through healthcare, education, skill development, and 
+                        environmental conservation initiatives.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Our Programs</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="get-involved.html">Get Involved</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Our Programs</h4>
+                    <ul>
+                        <li><a href="programs.html#healthcare">Healthcare Services</a></li>
+                        <li><a href="programs.html#skill">Skill Development</a></li>
+                        <li><a href="programs.html#women">Women & Child Development</a></li>
+                        <li><a href="programs.html#agriculture">Agriculture Development</a></li>
+                        <li><a href="programs.html#environment">Environmental Protection</a></li>
+                        <li><a href="programs.html#welfare">Social Welfare</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to our newsletter for updates on our programs and impact stories.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                    <div class="footer-contact" style="margin-top: 1.5rem;">
+                        <p style="margin-bottom: 0.5rem;">
+                            <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>
+                            New Lambulane, Near Vaiphei Baptist Church, Imphal East-795001
+                        </p>
+                        <p style="margin-bottom: 0.5rem;">
+                            <i class="fas fa-phone" style="margin-right: 0.5rem;"></i>
+                            +91 7005176498
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>
+                            jalkifoundation@gmail.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 JALKI Foundation. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
